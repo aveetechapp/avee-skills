@@ -30,7 +30,7 @@ export function rename(root = packRoot) {
   const pattern = new RegExp([...mapping.keys()].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|"), "g");
   const changed = [];
   for (const path of walk(root)) {
-    if (path === namesPath || path === lockPath || path === self || !textExt.has(extname(path))) continue;
+    if (relative(root, path).startsWith("scripts/") || path === namesPath || path === lockPath || path === self || !textExt.has(extname(path))) continue;
     const before = read(path);
     const after = before
       .replace(pattern, (m) => mapping.get(m))

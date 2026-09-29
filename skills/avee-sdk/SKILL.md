@@ -13,7 +13,7 @@ No SDK is required: both APIs are keyless HTTPS. Check whether a package is publ
 `go list -m`) before telling the user to install it; the docs site lists what is released:
 https://docs.preview.avee.tech
 
-One package per language carries both clients: `@avee/sdk` (npm), `github.com/aveetechapp/avee-go`
+One package per language carries both clients: `@avee_tech/sdk` (npm), `github.com/aveetechapp/avee-go`
 (Go) and `avee` (PyPI). The Astra client is a separate entry point inside it, so importing one never
 loads the other.
 
@@ -22,10 +22,10 @@ loads the other.
 Astra's REST, SSE and WebSocket routes, with exact prices, retries that honour `Retry-After`, and
 reconnecting streams. Pass the host explicitly while Astra runs on the preview host.
 
-**TypeScript / Node** (`npm install @avee/sdk`, entry point `@avee/sdk/astra`, Node 22+ or a browser, no runtime deps)
+**TypeScript / Node** (`npm install @avee_tech/sdk`, entry point `@avee_tech/sdk/astra`, Node 22+ or a browser, no runtime deps)
 
 ```ts
-import { AstraClient } from "@avee/sdk/astra";
+import { AstraClient } from "@avee_tech/sdk/astra";
 const astra = new AstraClient({ baseUrl: "https://astra.preview.avee.tech" });
 const [btc] = await astra.latestPrices(["0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43"]);
 console.log(btc.price.toDecimalString());
@@ -53,7 +53,7 @@ Astra by changing its base URL (the `astra-oracle` skill).
 
 ## Data API client
 
-The same packages carry a typed client for `/api/v1`: `AveeClient` from `@avee/sdk`, the root
+The same packages carry a typed client for `/api/v1`: `AveeClient` from `@avee_tech/sdk`, the root
 package of `github.com/aveetechapp/avee-go`, and `avee`. It is not released yet. Until it is:
 
 ```ts
