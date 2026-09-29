@@ -1,0 +1,11 @@
+{
+  "skillsRepo": "aveetechapp/avee-skills",
+  "apiBase": "https://api.preview.avee.tech/api/v1",
+  "astraHost": "https://astra.preview.avee.tech",
+  "astraWs": "wss://astra.preview.avee.tech/ws",
+  "mcpUrl": "https://mcp.preview.avee.tech/mcp",
+  "docsHost": "https://docs.preview.avee.tech",
+  "npmPackage": "@avee/sdk",
+  "pypiPackage": "avee",
+  "goModule": "github.com/aveetechapp/avee-go"
+}
