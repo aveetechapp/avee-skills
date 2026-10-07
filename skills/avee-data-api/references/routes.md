@@ -52,7 +52,7 @@ Path placeholders: `{chain}` is a slug or numeric id, `{address}` a chain-native
 
 | Route | CU | Calls/min | Answers |
 |---|---|---|---|
-| `GET /wallets` | 50 | 60 | traders ranked on one `chain`: `window, sort, min_win_rate, min_trades, exclude_bots, only_copy_eligible, tiers` |
+| `GET /wallets` | 50 | 60 | traders ranked on one `chain`: `window, sort, min_win_rate, min_trades, min_human_score, exclude_bots, only_copy_eligible, tiers`; `sort=human_score` ranks long-term people |
 | `GET /wallets/stats` | 20 | 150 | trader population per chain |
 | `POST /wallets/labels/batch` | 60 | 50 | bot, sniper and scammer labels: body `{"chain":"…","addresses":["…"]}`, up to 200 |
 | `GET /wallets/{address}/overview` | 60 | 50 | one wallet across every chain it traded |
@@ -76,6 +76,7 @@ Win rate: sorting by `win_rate` ranks only wallets with enough rated positions. 
 | `GET /chains/{chain}/farms/{address}` | 20 | 150 | one farm |
 | `GET /perps` † | 20 | 150 | perpetual markets with mark, funding and open interest |
 | `GET /perps/{market}/history` † | 30 | 100 | OI, funding and mark history; `market` as `pair_address` spells it (`BTC`), `interval=5m|1h` |
+| `GET /perps/{market}/stats` † | 10 | 300 | position flow by side over 5m/1h/6h/24h, liquidations, OI a day ago |
 | `GET /perps/liquidations` † | 30 | 100 | daily liquidations of one market or a whole venue |
 | `GET /prices` † | 10 | 300 | latest avee oracle prices, `ids` = comma-separated feed ids |
 | `GET /prices/at` † | 20 | 150 | oracle prices at `ts` (unix seconds) |

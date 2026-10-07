@@ -68,7 +68,7 @@ Most tools that take one pair, token or wallet need `address` plus `chain` (a na
 
 | Tool | Use it for |
 |---|---|
-| `get_farm_list` ◦ | Yield farms with TVL, reward token, APR, and whether the contract is verified. |
+| `get_farm_list` ◦ | Yield farms with TVL, every reward stream with its APR share, the APR (a base–max range when boosted), and whether the contract is verified. |
 | `get_perp_markets` ◦ | Perp markets with mark, funding and open interest. Fallback: `get_pair_list` on `hyperliquid`. |
 | `get_oracle_prices` ◦ | avee oracle prices by feed id, latest or at `publish_time`. For streaming, use Astra (the `astra-oracle` skill). |
 
